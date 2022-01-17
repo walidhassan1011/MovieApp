@@ -19,12 +19,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Sign />} />
-        </Routes>
-        <Routes>
           <Route path="/signup" element={<SignUp />} />
-        </Routes>
-
-        <Routes>
           <Route exact path="/movies" element={<Movies />} />
           <Route exact path="/details/:id" element={<Details />} />
         </Routes>
