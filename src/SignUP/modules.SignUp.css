@@ -1,0 +1,170 @@
+.MainSignup {
+  background-color: #342e3c;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-image: url(../image/WhatsApp\ Image\ 2022-01-13\ at\ 8.32.14\ PM.jpeg); */
+  background-position: center;
+  background-size: cover;
+}
+.signup-container {
+  width: 35%;
+  height: 55%;
+  background-color: #26222c;
+  border-radius: 10px;
+}
+.Name-container {
+  background-color: #26222c;
+  border-radius: 20px;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.switch-container {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  /* background-color: aqua; */
+  align-items: center;
+  justify-content: center;
+}
+.switch-container a {
+  padding: 20px;
+  padding-left: 75px;
+  padding-right: 75px;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-weight: bold;
+  background-color: #26222c;
+  transition: all ease 0.75s;
+  color: white;
+}
+.switch-container a:hover {
+  background-color: #26222ce3;
+  transform: translateY(-2px);
+  color: #aa75fa;
+}
+.switch-container a:focus {
+  transform: translateY(2px);
+}
+.h1-signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.h1-signup h1 {
+  color: white;
+  font-weight: bold;
+  position: relative;
+  cursor: pointer;
+}
+.h1-signup h1::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transform-origin: left;
+  transform: scale(0, 1);
+
+  transition: all ease 0.75s;
+}
+.h1-signup h1:hover::after {
+  transform: scale(1, 1);
+}
+
+.sec-container {
+  width: 80%;
+  height: 90%;
+  /* background-color: yellow; */
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.their-container {
+  /* background-color: violet; */
+  padding-bottom: 30px;
+}
+.name {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.name input {
+  margin-right: 10px;
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  background: #342e3c;
+  transition: all ease 0.75s;
+}
+
+.emailfield {
+  padding: 10px;
+}
+
+.password {
+  padding: 10px;
+}
+.emailfield input {
+  padding-right: 53.5%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding-left: 5px;
+  background: #342e3c;
+  transition: all ease 0.75s;
+}
+
+input[type="email"] {
+  text-align: left;
+}
+
+.password input {
+  margin-right: 10px;
+  padding: 10px;
+  outline: none;
+  border: none;
+  color: white;
+  background: #342e3c;
+  transition: all ease 0.75s;
+  border-radius: 20px;
+}
+
+.signup-btn {
+  margin-top: 10px;
+  width: 90%;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.signup-btn a {
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: rgba(255, 255, 255, 0.739);
+
+  transition: all ease 0.75s;
+}
+.signup-btn a:hover {
+  color: #aa75fa;
+  transform: translateY(-2px);
+}
+.signup-btn a:focus {
+  transform: translateY(4px);
+}
