@@ -30,7 +30,7 @@ function SignUp() {
       <section className="MainSignup">
         <Form onSubmit={handleSubmit} className="signup-container">
           <div className="switch-container">
-            <Link to={"/signp"}>signup</Link>
+            <Link to={"/signup"}>signup</Link>
 
             <Link to="/">login</Link>
           </div>

@@ -9,7 +9,7 @@
   background-size: cover;
 }
 .signup-container {
-  width: 35%;
+  min-width: 35%;
   height: 55%;
   background-color: #26222c;
   border-radius: 10px;
@@ -17,14 +17,14 @@
 .Name-container {
   background-color: #26222c;
   border-radius: 20px;
-  width: 100%;
+  min-width: 100%;
   height: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .switch-container {
-  width: 100%;
+  min-width: 100%;
   height: 20%;
   display: flex;
   /* background-color: aqua; */
@@ -64,7 +64,7 @@
 .h1-signup h1::after {
   content: "";
   position: absolute;
-  width: 100%;
+  min-width: 100%;
   height: 2px;
   bottom: 0;
   left: 0;
@@ -79,7 +79,7 @@
 }
 
 .sec-container {
-  width: 80%;
+  min-width: 80%;
   height: 90%;
   /* background-color: yellow; */
   padding-left: 10px;
@@ -116,20 +116,18 @@
   padding: 10px;
 }
 .emailfield input {
-  padding-right: 53.5%;
+  width: 98%;
+
   padding-top: 10px;
   padding-bottom: 10px;
   outline: none;
+  text-align: left;
   border: none;
   border-radius: 20px;
   color: white;
-  padding-left: 5px;
+  padding-left: 10px;
   background: #342e3c;
   transition: all ease 0.75s;
-}
-
-input[type="email"] {
-  text-align: left;
 }
 
 .password input {
@@ -151,20 +149,23 @@ input[type="email"] {
   align-items: center;
   justify-content: center;
 }
-.signup-btn a {
+.signup-btn button {
   padding: 10px;
   text-align: center;
   width: 100%;
   text-decoration: none;
   text-transform: capitalize;
+  background-color: transparent;
+  outline: none;
+  border: none;
   color: rgba(255, 255, 255, 0.739);
 
   transition: all ease 0.75s;
 }
-.signup-btn a:hover {
+.signup-btn button:hover {
   color: #aa75fa;
   transform: translateY(-2px);
 }
-.signup-btn a:focus {
+.signup-btn button:focus {
   transform: translateY(4px);
 }

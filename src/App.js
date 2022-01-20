@@ -14,6 +14,7 @@ import Movies from "./Movies/Movies";
 import Details from "./Details/Details";
 import Sign from "./SignIn/Sign";
 import { UserAuthContextProvider } from "./context/UserAuthContext";
+import ProtectedRoute from "./ProtectedRoute";
 function App() {
   return (
     <>
@@ -22,8 +23,24 @@ function App() {
           <Routes>
             <Route path="/" element={<Sign />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route exact path="/movies" element={<Movies />} />
-            <Route exact path="/details/:id" element={<Details />} />
+            <Route
+              exact
+              path="/movies"
+              element={
+                <ProtectedRoute>
+                  <Movies />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              exact
+              path="/details/:id"
+              element={
+                <ProtectedRoute>
+                  <Details />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
         </UserAuthContextProvider>
       </Router>
