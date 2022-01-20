@@ -13,16 +13,19 @@ import SignUp from "./SignUP/SignUp";
 import Movies from "./Movies/Movies";
 import Details from "./Details/Details";
 import Sign from "./SignIn/Sign";
+import { UserAuthContextProvider } from "./context/UserAuthContext";
 function App() {
   return (
     <>
       <Router>
-        <Routes>
-          <Route path="/" element={<Sign />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route exact path="/movies" element={<Movies />} />
-          <Route exact path="/details/:id" element={<Details />} />
-        </Routes>
+        <UserAuthContextProvider>
+          <Routes>
+            <Route path="/" element={<Sign />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route exact path="/movies" element={<Movies />} />
+            <Route exact path="/details/:id" element={<Details />} />
+          </Routes>
+        </UserAuthContextProvider>
       </Router>
     </>
   );
