@@ -9,14 +9,11 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import Tv from "./TV/Tv";
 import Sidermenu from "./Sidermenu/Sidermenu";
-import SignUp from "./SignUP/SignUp";
 import Movies from "./Movies/Movies";
 import Details from "./Details/Details";
-import Sign from "./SignIn/Sign";
 import Search from "./Search/Search";
 import Fav from "./Favorites/Fav";
 import Home from "./Home/Home";
-
 import Loading from "./Loading/Loading";
 class  App extends Component {
   state = {
@@ -41,10 +38,6 @@ class  App extends Component {
           <Route path="/favorites" >
           <Fav favorites = {this.state.favorites}/>
           </Route>
-        </Switch>
-        <Switch>
-        <Route path="/signin" component={Sign} />
-          <Route path="/signup" component={SignUp} />
         </Switch>
       </Router> */}
       </Fragment>
