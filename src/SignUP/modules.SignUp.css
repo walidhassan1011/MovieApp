@@ -13,7 +13,7 @@
   height: 100%;
   width: 100%;
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.822);
+  background-color: rgba(0, 0, 0, 0.856);
 }
 .left-side {
   min-height: 100vh;
@@ -66,7 +66,7 @@
 .switch-container a:hover {
   background-color: transparent;
   transform: translateY(-2px);
-  color: #e50914;
+  color: #ff1d56;
   text-decoration: none;
 }
 .switch-container a:focus {
@@ -139,7 +139,7 @@
   border: none;
   border-radius: 20px;
   color: white;
-  background: #e50914;
+  background: #ff1d56;
   color: aliceblue;
   transition: all ease 0.75s;
 }
@@ -175,7 +175,7 @@
   border-radius: 20px;
   color: white;
   padding-left: 10px;
-  background: #e50914;
+  background: #ff1d56;
   transition: all ease 0.75s;
 }
 input::placeholder {
@@ -190,7 +190,7 @@ input::placeholder {
   border: none;
   border-radius: 20px;
   color: white;
-  background: #e50914;
+  background: #ff1d56;
   color: aliceblue;
   transition: all ease 0.75s;
 }

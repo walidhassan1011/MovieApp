@@ -12,7 +12,7 @@
   min-height: 100vh;
   min-width: 100%;
   position: relative;
-  background-color: rgba(0, 0, 0, 0.644);
+  background-color: rgba(0, 0, 0, 0.856);
 }
 .l-side {
   min-height: 100vh;
@@ -58,13 +58,13 @@
   margin-bottom: 20px;
   outline: none;
   border: none;
-  background-color: #e50914;
+  background-color: #ff1d56;
   position: relative;
   border-radius: 20px;
   color: aliceblue;
 }
 .inputs:focus {
-  background-color: #e50914;
+  background-color: #ff1d56;
   color: aliceblue;
 }
 .inputs::placeholder {
@@ -108,7 +108,7 @@
   transform: scale(1, 1);
 }
 .login-btn:hover {
-  color: #e50914;
+  color: #ff1d56;
 }
 
 .platform {
@@ -147,7 +147,7 @@
   font-weight: bold;
   letter-spacing: 2px;
 
-  color: #e50914;
+  color: #ff1d56;
   padding-top: 80px;
 }
 .platform button {
@@ -179,7 +179,7 @@
   transform: scale(1, 1);
 }
 .platform span:hover {
-  color: #e50914;
+  color: #ff1d56;
 }
 .signup {
   display: flex;

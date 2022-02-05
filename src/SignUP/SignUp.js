@@ -9,20 +9,21 @@ import axios from "axios";
 import "./modules.SignUp.css";
 import { useUserAuth } from "../context/UserAuthContext";
 import { Alert, Form } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 
 function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setconfirmPassword] = useState("");
   const [error, stError] = useState("");
-  const navigate = useNavigate();
+  const navigate = useHistory();
   const { signUp } = useUserAuth();
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (confirmPassword === password) {
       try {
         await signUp(email, password);
-        navigate("/");
+        navigate.push("/");
       } catch (err) {
         stError(err.message);
       }

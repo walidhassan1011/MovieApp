@@ -3,13 +3,14 @@ import * as FaBIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as CgIcons from "react-icons/cg";
 import * as FcIcons from "react-icons/fc";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useUserAuth } from "../context/UserAuthContext";
 import { Alert, Form } from "react-bootstrap";
 
 import "./modules.Sign.css";
+import { useHistory } from "react-router-dom";
 
 function Sign() {
   const [email, setEmail] = useState("");
@@ -18,12 +19,12 @@ function Sign() {
   const [error, setError] = useState("");
 
   const { logIn, googleSignIn, facebookSignIn } = useUserAuth();
-  const navigate = useNavigate();
+  const navigate = useHistory();
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await logIn(email, password);
-      navigate("/movies");
+      navigate.push("/movies");
     } catch {
       setError("username or password invalid");
     }
@@ -33,7 +34,7 @@ function Sign() {
       e.preventDefault();
 
       await googleSignIn();
-      navigate("/movies");
+      navigate.push("/movies");
     } catch {
       setError("username or password invalid");
     }
@@ -43,7 +44,7 @@ function Sign() {
       e.preventDefault();
 
       await facebookSignIn();
-      navigate("/movies");
+      navigate.push("/movies");
     } catch (err) {
       setError(err.message);
     }

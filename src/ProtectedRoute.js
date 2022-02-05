@@ -1,11 +1,12 @@
 import react from "react";
-import { Navigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useUserAuth } from "./context/UserAuthContext";
 
 const ProtectedRoute = ({ children }) => {
+  let history = useHistory();
   let { user } = useUserAuth();
   if (!user) {
-    return <Navigate to="/" />;
+    history.push("/");
   }
   return children;
 };
