@@ -16,36 +16,7 @@ import Sign from "./SignIn/Sign";
 import { UserAuthContextProvider } from "./context/UserAuthContext";
 import ProtectedRoute from "./ProtectedRoute";
 function App() {
-  return (
-    <>
-      <Router>
-        <UserAuthContextProvider>
-          <Routes>
-            <Route path="/" element={<Sign />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route
-              exact
-              path="/movies"
-              element={
-                <ProtectedRoute>
-                  <Movies />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              exact
-              path="/details/:id"
-              element={
-                <ProtectedRoute>
-                  <Details />
-                </ProtectedRoute>
-              }
-            />
-          </Routes>
-        </UserAuthContextProvider>
-      </Router>
-    </>
-  );
+  return <></>;
 }
 
 export default App;
