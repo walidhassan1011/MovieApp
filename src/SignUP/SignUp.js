@@ -44,7 +44,7 @@ function SignUp() {
                   ></input>
                 </div>
                 <div className="signup-btn">
-                  <Link to="/">get started</Link>
+                  <Link to="/signin">get started</Link>
                 </div>
               </div>
             </div>

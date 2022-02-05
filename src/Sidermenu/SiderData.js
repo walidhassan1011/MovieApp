@@ -3,10 +3,11 @@ import * as FaBIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
 import * as MDIcons from "react-icons/md";
+import * as BiIcons from 'react-icons/bi'
 export const SiderbarData = [
   {
     tittle: "Home",
-    path: "/",
+    path: "/movies",
     icon: <AiIcons.AiFillHome />,
     cName: "side-item",
   },
@@ -17,28 +18,22 @@ export const SiderbarData = [
     cName: "side-item",
   },
   {
-    tittle: "TvShows",
-    path: "/tv",
-    icon: <FaBIcons.FaCartPlus />,
+    tittle: "Search",
+    path: "/search",
+    icon: <AiIcons.AiOutlineSearch />,
     cName: "side-item",
   },
 
   {
-    tittle: "Message",
-    path: "/message",
-    icon: <FaBIcons.FaEnvelopeOpenText />,
+    tittle: "Favorites",
+    path: "/favorites",
+    icon: <AiIcons.AiFillHeart />,
     cName: "side-item",
   },
   {
-    tittle: "Team",
-    path: "/team",
-    icon: <AiIcons.AiOutlineTeam />,
-    cName: "side-item",
-  },
-  {
-    tittle: "Support",
-    path: "/support",
-    icon: <IoIcons.IoMdHelpCircle />,
+    tittle: "Sign Out",
+    path: "/",
+    icon: <BiIcons.BiLogOutCircle />,
     cName: "side-item",
   },
 ];

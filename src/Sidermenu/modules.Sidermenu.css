@@ -1,22 +1,27 @@
 .body {
   height: 100vh;
-  background-color: brown;
 }
 .siderBody {
-  background-color: #1a1c1e;
+  background-color: #090a0a;
   width: 20%;
   height: 100vh;
   position: fixed;
   transition: width ease-in 0.2s;
   border-radius: 5px;
+  z-index: 100;
+  top: 0;
+  left: 0;
 }
 .siderBody-inactive {
-  background-color: #1a1c1e;
+  background-color: #090a0a;
   width: 5%;
   height: 100vh;
   position: fixed;
   transition: width ease 0.2s;
   border-radius: 5px;
+  z-index: 100;
+  top: 0;
+  left: 0;
 }
 ul {
   /* background-color: chocolate; */
@@ -28,26 +33,28 @@ ul {
 }
 .side-item {
   background-color: transparent;
-  margin-top: 30px;
+  margin-top: 43px;
   margin-left: 10px;
   border-radius: 10px;
-  padding: 10px;
+  padding: 15px;
+  padding-left: 0;
   transition: all ease 0.2s;
+  list-style-type:none;
   /* background-color: aqua; */
 }
 .side-item:hover {
-  background-color: chartreuse;
+  background-color: #1b1b1b;
 }
 .side-item-inactive {
   background-color: transparent;
-
+  
   margin-top: 30px;
   border-radius: 10px;
-  padding: 10px;
-  /* display: flex;
+  padding: 10px ;
+  display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; */
+  flex-direction: column;
   transition: all ease 0.2s;
 }
 .side-item span {
@@ -56,7 +63,7 @@ ul {
   border-radius: 10px;
   margin-right: 10px;
   text-decoration: none;
-  color: #7780b1;
+  color: #dc3545;
 
   transition: all ease 0.75s;
 }
@@ -65,24 +72,21 @@ ul {
 
   margin-right: 10px;
   text-decoration: none;
-  color: #7780b1;
-
+  color: #dc3545;
   border-radius: 10px;
   padding: 10px;
-  transition: all ease 0.75s;
+  transition: all ease 0.5s;
 }
 .side-item-inactive span:hover {
-  background-color: brown;
+  background-color: #1b1b1b;
 }
 .side-item a {
   text-transform: capitalize;
   text-decoration: none;
   font-size: 20px;
-  color: #7780b1;
+  color: white;
   font-weight: 400;
-
   position: absolute;
-
   display: inline-block;
   line-height: 40px;
   opacity: 1;
@@ -106,12 +110,16 @@ ul {
   background-color: transparent;
   height: 80px;
   width: 100%;
-  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 .side-btn button {
-  background-color: black;
+  background-color: transparent;
+  color: aliceblue;
+  /* background-color: black; */
   font-size: 30px;
-  background-color: white;
+  /* background-color: white; */
   outline: none;
   border: none;
   display: flex;
@@ -119,5 +127,4 @@ ul {
   align-items: center;
   border-radius: 5px;
   margin-top: 10px;
-  padding: 10px;
 }

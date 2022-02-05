@@ -4,8 +4,9 @@ import * as AiIcons from "react-icons/ai";
 import * as GiIcons from "react-icons/gi";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import "./modules.Sidermenu.css";
+import style from "./modules.Sidermenu.css";
 import { SiderbarData } from "./SiderData";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
 function Sidermenu(props) {
   const [sider, setsider] = useState(false);
@@ -15,7 +16,7 @@ function Sidermenu(props) {
 
   return (
     <>
-      <section className="body">
+      <section className={style.body}>
         <div className={sider ? "siderBody" : "siderBody-inactive"}>
           <ul>
             <div className="side-btn">
@@ -25,7 +26,7 @@ function Sidermenu(props) {
             </div>
             {SiderbarData.map((data, index) => {
               return (
-                <li
+                <li onClick={()=>{<Redirect to = {data.path}></Redirect>}}
                   key={index}
                   className={sider ? "side-item" : "side-item-inactive"}
                 >
