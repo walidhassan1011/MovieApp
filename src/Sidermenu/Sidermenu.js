@@ -6,9 +6,15 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import style from "./modules.Sidermenu.css";
 import { SiderbarData } from "./SiderData";
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  useNavigate,
+} from "react-router-dom";
 
 function Sidermenu(props) {
+  const navigate = useNavigate();
   const [sider, setsider] = useState(false);
   const siderChange = () => {
     setsider(!sider);
@@ -26,7 +32,10 @@ function Sidermenu(props) {
             </div>
             {SiderbarData.map((data, index) => {
               return (
-                <li onClick={()=>{<Redirect to = {data.path}></Redirect>}}
+                <li
+                  onClick={() => {
+                    navigate(`/${data.path}`);
+                  }}
                   key={index}
                   className={sider ? "side-item" : "side-item-inactive"}
                 >

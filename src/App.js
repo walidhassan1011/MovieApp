@@ -1,55 +1,42 @@
 import "./App.css";
-import * as FaBIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
-import * as CgIcons from "react-icons/cg";
-import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "./components/Navbar/Navbar";
+import Card from "./components/card/Card";
+import Sidermenu from "./components/Sidermenu/Sidermenu";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import React, { Component, Fragment } from "react";
+import Login from "./components/login/Login";
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from "react-router-dom";
+function App() {
+  const [sidbar, setsidbar] = useState(false);
 
-import Movies from "./Movies/Movies";
-import Details from "./Details/Details";
-import Search from "./Search/Search";
-import Fav from "./Favorites/Fav";
-import Home from "./Home/Home";
-import Loading from "./Loading/Loading";
-import ProtectedRoute from "./ProtectedRoute";
-class App extends Component {
-  state = {
-    allMovies: [],
-    favorites: [],
+  const showsider = () => {
+    setsidbar(!sidbar);
   };
-  onAddToFavoritesHandler = (fav) => {
-    this.setState({ favorites: [...fav] });
-    console.log(this.state.favorites);
-  };
-  render() {
-    return (
-      <Fragment>
-        <Router>
-          <Switch>
-            <ProtectedRoute>
-              <Route exact path={"/"} component={Home} />
-              <Route exact path={"/home"} component={Home} />
-              <Route path="/movies">
-                <Movies onAddToFavorites={this.onAddToFavoritesHandler} />
-              </Route>
-              <Route path="/details/:cat/:id" component={Details} />
-              <Route path="/search" component={Search} />
-              <Route path="/favorites">
-                <Fav favorites={this.state.favorites} />
-              </Route>
-            </ProtectedRoute>
-          </Switch>
-        </Router>
-      </Fragment>
-    );
-  }
+
+  return (
+    <>
+      <Router>
+        <Routes>
+          <Route path="/home" element={<Navbar showsider={showsider} />} />
+        </Routes>
+
+        <Routes>
+          <Route path="/home" element={<Card />} />
+        </Routes>
+        <Routes>
+          <Route
+            path="/home"
+            element={<Sidermenu showsider={sidbar} sider={showsider} />}
+          />
+        </Routes>
+        <Routes>
+          <Route path="/" element={<Login />} />
+        </Routes>
+      </Router>
+    </>
+  );
 }
+
 export default App;
