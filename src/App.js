@@ -19,6 +19,7 @@ import Search from "./Search/Search";
 import Fav from "./Favorites/Fav";
 import Home from "./Home/Home";
 import Loading from "./Loading/Loading";
+import ProtectedRoute from "./ProtectedRoute";
 class App extends Component {
   state = {
     allMovies: [],
@@ -33,16 +34,18 @@ class App extends Component {
       <Fragment>
         <Router>
           <Switch>
-            <Route exact path={"/"} component={Home} />
-            <Route exact path={"/home"} component={Home} />
-            <Route path="/movies">
-              <Movies onAddToFavorites={this.onAddToFavoritesHandler} />
-            </Route>
-            <Route path="/details/:cat/:id" component={Details} />
-            <Route path="/search" component={Search} />
-            <Route path="/favorites">
-              <Fav favorites={this.state.favorites} />
-            </Route>
+            <ProtectedRoute>
+              <Route exact path={"/"} component={Home} />
+              <Route exact path={"/home"} component={Home} />
+              <Route path="/movies">
+                <Movies onAddToFavorites={this.onAddToFavoritesHandler} />
+              </Route>
+              <Route path="/details/:cat/:id" component={Details} />
+              <Route path="/search" component={Search} />
+              <Route path="/favorites">
+                <Fav favorites={this.state.favorites} />
+              </Route>
+            </ProtectedRoute>
           </Switch>
         </Router>
       </Fragment>
