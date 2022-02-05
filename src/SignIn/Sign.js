@@ -13,73 +13,99 @@ import "./modules.Sign.css";
 
 function Sign() {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, stError] = useState("");
 
-  const { logIn } = useUserAuth();
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const { logIn, googleSignIn, facebookSignIn } = useUserAuth();
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await logIn(email, password);
       navigate("/movies");
+    } catch {
+      setError("username or password invalid");
+    }
+  };
+  const handleGoogle = async (e) => {
+    try {
+      e.preventDefault();
+
+      await googleSignIn();
+      navigate("/movies");
+    } catch {
+      setError("username or password invalid");
+    }
+  };
+  const handlefacebook = async (e) => {
+    try {
+      e.preventDefault();
+
+      await facebookSignIn();
+      navigate("/movies");
     } catch (err) {
-      stError(err.message);
+      setError(err.message);
     }
   };
   return (
     <>
       <section className="section-signIN">
         <Form onSubmit={handleSubmit} className="signContainer">
-          <div className="BodyContainer">
-            <div className="platfrom-container">
-              <div className="login-word">
-                <span>login with</span>
-              </div>
-              <div className="platform">
-                <Link to="#">
-                  <FcIcons.FcGoogle />
+          <div className="l-side">
+            <div className="BodyContainer">
+              <div className="platfrom-container">
+                <div className="login-word">
+                  <h1>login with</h1>
+                </div>
+                <div className="platform">
+                  <button onClick={handleGoogle}>
+                    <FcIcons.FcGoogle />
 
-                  <span>google</span>
-                </Link>
-                <Link to="#">
-                  <FaBIcons.FaFacebookF />
-                  <span>facebook</span>
-                </Link>
+                    <span>google</span>
+                  </button>
+                  <button onClick={handlefacebook}>
+                    <FaBIcons.FaFacebookF />
+                    <span>facebook</span>
+                  </button>
+                </div>
+                <div className="or-word">
+                  <span>or</span>
+                </div>
               </div>
-              <div className="or-word">
-                <span>or</span>
-              </div>
-            </div>
-            {error && <Alert variant="danger">{error}</Alert>}
+              {error && <Alert variant="danger">{error}</Alert>}
 
-            <div className="signBody">
-              <span>username</span>
-              <input
-                type="text"
-                required
-                placeholder="enter your username"
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-              ></input>
-              <span>password</span>
-              <input
-                type="password"
-                required
-                placeholder="enter your password"
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
-              ></input>
-              <button className="login-btn">log in</button>
-              <div className="signup">
-                <span>don't have account?</span>
-                <Link to="/signup">sign up</Link>
+              <div className="signBody">
+                <span>username</span>
+                <input
+                  type="text"
+                  className="inputs"
+                  required
+                  placeholder="enter your username"
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                ></input>
+                <span>password</span>
+                <input
+                  className="inputs"
+                  type="password"
+                  required
+                  placeholder="enter your password"
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
+                ></input>
+                <button className="login-btn">log in</button>
+                <div className="signup">
+                  <span>don't have account?</span>
+                  <Link to="/signup">sign up</Link>
+                </div>
               </div>
             </div>
           </div>
         </Form>
+        <div className="r-side"></div>
       </section>
     </>
   );
