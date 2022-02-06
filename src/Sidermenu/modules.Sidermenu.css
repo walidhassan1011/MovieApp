@@ -3,7 +3,7 @@
 }
 .siderBody {
   background-color: #090a0a;
-  width: 20%;
+  min-width: 20%;
   height: 100vh;
   position: fixed;
   transition: width ease-in 0.2s;
@@ -14,11 +14,11 @@
 }
 .siderBody-inactive {
   background-color: #090a0a;
-  width: 5%;
+  min-width: 5%;
   height: 100vh;
   position: fixed;
   transition: width ease 0.2s;
-  border-radius: 5px;
+
   z-index: 100;
   top: 0;
   left: 0;
@@ -39,7 +39,7 @@ ul {
   padding: 15px;
   padding-left: 0;
   transition: all ease 0.2s;
-  list-style-type:none;
+  list-style-type: none;
   /* background-color: aqua; */
 }
 .side-item:hover {
@@ -47,10 +47,10 @@ ul {
 }
 .side-item-inactive {
   background-color: transparent;
-  
+
   margin-top: 30px;
   border-radius: 10px;
-  padding: 10px ;
+  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,7 +96,7 @@ ul {
   text-transform: capitalize;
   text-decoration: none;
   font-size: 20px;
-  color: #7780b1;
+  color: transparent;
   font-weight: 400;
 
   position: absolute;
@@ -110,10 +110,12 @@ ul {
   background-color: transparent;
   height: 80px;
   width: 100%;
+  margin-left: 10px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
+
 .side-btn button {
   background-color: transparent;
   color: aliceblue;
@@ -127,4 +129,23 @@ ul {
   align-items: center;
   border-radius: 5px;
   margin-top: 10px;
+}
+@media only screen and (max-width: 600px) {
+  .siderBody-inactive {
+    border-radius: 0%;
+  }
+  .siderBody {
+    width: 50%;
+    border-radius: 0;
+  }
+
+  .side-item span {
+    font-size: 20px;
+  }
+  .side-item-inactive span {
+    font-size: 20px;
+  }
+  .side-btn {
+    margin-left: 20px;
+  }
 }
