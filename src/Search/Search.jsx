@@ -25,11 +25,11 @@ class Search extends Component {
                 const responseTwo = responses[1];
                 responses[0] = responses[0].data.results
                 responses[1] = responses[1].data.results
-                // console.log(responseOne.data.results)
+               
                 this.setState({filteredData:[...responses[0],...responses[1]]})
-                console.log(this.state.filteredData)
+                
             })
-        ).catch(errors=>console.log(errors))
+        ).catch(errors=>errors)
     }
     // =====================================================================================================================
     // getMovies = async()=>{
@@ -48,8 +48,7 @@ class Search extends Component {
     //     let {data} = await axios.get('https://api.themoviedb.org/3/person/popular?api_key=bdd10d2b8f52bc0a5320d5c9d88bd1ff&language=en-US&page=1');
     //     this.setState({filteredData:data.results})
 
-    //     console.log(this.state.filteredData)
-    //  }
+    
     render() {
         
         return <Fragment>
@@ -60,7 +59,7 @@ class Search extends Component {
                 <input type="text" placeholder='Enter your keyword here' className={style.inputControl} onChange={
                     (e)=>{
                         this.setState({searchTerm:e.target.value,searchTitle:"Search Results: "})
-                        console.log(this.state.searchTerm)
+                        
                     }
                 } />
                  <BsIcons.BsSearch className={style.searchIcon} onClick={()=>{window.scrollTo(0,900)}}/>
@@ -87,7 +86,7 @@ class Search extends Component {
                              if(truthyVal.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
                              return val;
                          }).map((val)=>{
-                             console.log(val)
+                             
                              let truthyVal = val.name || val.original_title || val.title
                              return <Card val = {val} name = {truthyVal}/>
                          })}
