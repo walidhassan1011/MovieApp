@@ -135,8 +135,11 @@ ul {
     border-radius: 0%;
   }
   .siderBody {
-    width: 50%;
+    min-width: 50%;
     border-radius: 0;
+  }
+  .siderBody-inactive {
+    width: 15%;
   }
 
   .side-item span {
@@ -146,6 +149,6 @@ ul {
     font-size: 20px;
   }
   .side-btn {
-    margin-left: 20px;
+    margin-left: 10px;
   }
 }
