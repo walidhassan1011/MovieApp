@@ -42,8 +42,8 @@ function Card(props) {
             ? truthyVal.split(" ").slice(0, 2).join(" ") + "-.."
             : truthyVal}
         </h1>
-        <div className="row">
-          <h1 className={"col-sm-12 fw-light text-muted " + style.title}>
+        <div className="">
+          <h1 className={"fw-light text-muted " + style.title}>
             Release Date: {value.release_date}
             {value.first_air_date}
           </h1>

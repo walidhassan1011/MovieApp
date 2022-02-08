@@ -18,7 +18,10 @@ body {
   justify-content: center;
   align-items: center;
 }
-
+.overview {
+  font-size: 25px;
+  font-weight: lighter;
+}
 .text {
   color: black;
   font-size: 3rem;
@@ -40,7 +43,6 @@ body {
 }
 .list {
   list-style: none;
-
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -82,6 +84,9 @@ p::selection {
     justify-content: center;
     align-items: center;
   }
+  .overview {
+    font-size: 15px;
+  }
   .itemContainer img {
     width: 100%;
     margin-left: 40px;
@@ -97,5 +102,11 @@ p::selection {
     height: 100%;
     border: solid 1px crimson;
     margin-right: 5px;
+  }
+  .backArrow {
+    font-size: 3rem;
+  }
+  .list {
+    padding: 10px;
   }
 }

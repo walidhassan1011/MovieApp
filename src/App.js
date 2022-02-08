@@ -40,16 +40,15 @@ class App extends Component {
           <Route exact path={"/signup"} component={SignUp} />
           <Route exact path={"/"} component={Home} />
           <Route exact path={"/home"} component={Home} />
-          <ProtectedRoute>
-            <Route path="/movies">
-              <Movies onAddToFavorites={this.onAddToFavoritesHandler} />
-            </Route>
-            <Route path="/details/:cat/:id" component={Details} />
-            <Route path="/search" component={Search} />
-            <Route path="/favorites">
-              <Fav favorites={this.state.favorites} />
-            </Route>
-          </ProtectedRoute>
+
+          <Route path="/movies">
+            <Movies onAddToFavorites={this.onAddToFavoritesHandler} />
+          </Route>
+          <Route path="/details/:cat/:id" component={Details} />
+          <Route path="/search" component={Search} />
+          <Route path="/favorites">
+            <Fav favorites={this.state.favorites} />
+          </Route>
         </Switch>
       </UserAuthContextProvider>
     );

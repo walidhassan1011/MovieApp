@@ -39,13 +39,15 @@ class Details extends Component {
           "/credits?api_key=bdd10d2b8f52bc0a5320d5c9d88bd1ff&language=en-US"
       );
     this.setState({ cast: itemCast.data.cast, isCastLoaded: true });
+    console.log(this.state.cast);
   };
   getDetails = async () => {
     let id = this.props.match.params.id;
     let category = this.props.match.params.cat;
     let itemDetail;
     let itemCast;
-
+    console.log(this.props);
+    console.log(category);
     if (category == "movie") {
       itemDetail = await axios.get(
         "https://api.themoviedb.org/3/movie/" +
@@ -80,6 +82,8 @@ class Details extends Component {
     this.setState({ isDeatilsLoaded: true });
   }
   render() {
+    // console.log(this.state.genres)
+    // console.log(this.state.itemData)
     if (!this.state.isDeatilsLoaded || !this.state.isCastLoaded)
       return <Loading />;
     else
@@ -89,7 +93,7 @@ class Details extends Component {
             <div className="row justify-content-center">
               <div
                 className={
-                  "mt-5 col-lg-7 col-md-12 col-sm- p-5 d-flex flex-column justify-content-space-around " +
+                  "mt-5 col-lg-7 col-md-12 col-sm-12 p-5 d-flex flex-column justify-content-space-around " +
                   style.details
                 }
               >
@@ -109,12 +113,11 @@ class Details extends Component {
                   {this.state.itemData.release_date ||
                     this.state.itemData.first_air_date}
                 </p>
-                <p className="col-lg-12 col-md-12 col-sm-12 text-white fs-5 fw-light p-5">
+                <p className={style.overview + " text-white p-5"}>
                   {this.state.itemData.overview}
                 </p>
                 <h3 className="fw-bold mt-4 text-white">Rating</h3>
-                <ul className={style.list + " "}>
-                  {/* <li className={style.genreList}>Rating</li> */}
+                <ul className={style.list}>
                   <li>
                     <Rating
                       initialRating={this.state.itemData.vote_average / 2}
@@ -127,7 +130,6 @@ class Details extends Component {
                 </ul>
                 <h3 className="fw-bold mt-4 text-white">Genres</h3>
                 <ul className={style.list}>
-                  {/* <li className={style.genreList+" fw-bold"}>Genres: </li> */}
                   {this.state.genres.map((val) => {
                     return (
                       <li className={style.genreList} key={val.id}>

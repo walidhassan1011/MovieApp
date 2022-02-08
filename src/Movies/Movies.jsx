@@ -97,10 +97,7 @@ class Movies extends Component {
           </div>
           <div className={style.playIcon + " shadow-lg vh-100"}>
             <p className="text-center text-white display-5">Details</p>
-            <Link
-              to={"details/" + this.state.type + "/" + featuringItem}
-              className=""
-            >
+            <Link to={"details/movie/" + featuringItem} className="">
               <AiIcons.AiFillPlayCircle />
             </Link>
           </div>
@@ -218,16 +215,12 @@ class Movies extends Component {
                       alt="not available"
                     />
                   </div>
-                  <h1
-                    className={
-                      style.title + " col-sm-12 col-lg-12 " + style.itemTitle
-                    }
-                  >
+                  <h1 className={style.title + " " + style.itemTitle}>
                     {truthyVal.length > 25
                       ? truthyVal.split(" ").slice(0, 5).join(" ") + "-.."
                       : truthyVal}
                   </h1>
-                  <div className="row">
+                  <div className="">
                     <h1 className={" fw-light text-muted " + style.title}>
                       Release Date: {value.release_date}
                       {value.first_air_date}
