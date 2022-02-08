@@ -15,7 +15,6 @@ function Card(props) {
   let history = useHistory();
 
   const goToItemHandler = () => {
-    console.log(history);
     history.replace("/details/" + value.media_type + "/" + value.id);
     history.go(0);
   };

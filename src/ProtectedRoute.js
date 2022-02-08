@@ -1,14 +1,16 @@
 import react from "react";
-import { useHistory } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import { useUserAuth } from "./context/UserAuthContext";
 
-const ProtectedRoute = ({ children }) => {
-  let history = useHistory();
+export default function ProtectedRoute({ component: Component, ...rest }) {
   let { user } = useUserAuth();
-  if (!user) {
-    history.push("/");
-  }
-  return children;
-};
 
-export default ProtectedRoute;
+  return (
+    <Route
+      {...rest}
+      render={(props) => {
+        return user ? <Component {...props} /> : <Redirect to="/login" />;
+      }}
+    ></Route>
+  );
+}
