@@ -37,8 +37,8 @@ class Recommend extends Component {
     return (
       <Fragment>
         <div className="container mt-5">
+          <h1 className="text-white mt-5">{this.state.recommendationText}</h1>
           <div className="row p-3">
-            <h1 className="text-white mt-5">{this.state.recommendationText}</h1>
             {this.state.recommednations.map((val) => {
               let truthyVal = val.name || val.original_title || val.title;
               return (

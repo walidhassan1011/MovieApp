@@ -1,20 +1,23 @@
 import React, { Component } from "react";
-
+import { Link } from "react-router-dom";
 import style from "../Movies/Movies.module.css";
 import * as AiIcons from "react-icons/ai";
-
+import * as BiIcons from "react-icons/bi";
+import * as FiIcons from "react-icons/fi";
+import * as BsIcons from "react-icons/bs";
 import Rating from "react-rating";
-
+import { Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { Fragment } from "react";
-
+import { useState } from "react";
 function Card(props) {
   let baseUrl = "https://image.tmdb.org/t/p/w500";
   let value = props.val;
   let truthyVal = props.name;
   let history = useHistory();
-
+  // console.log(history)
   const goToItemHandler = () => {
+    console.log(history);
     history.replace("/details/" + value.media_type + "/" + value.id);
     history.go(0);
   };
@@ -37,7 +40,7 @@ function Card(props) {
             alt="not available"
           />
         </div>
-        <h1 className={style.title + " col-sm-12 col-lg-12 " + style.itemTitle}>
+        <h1 className={style.title + " " + style.itemTitle}>
           {truthyVal.length > 26
             ? truthyVal.split(" ").slice(0, 2).join(" ") + "-.."
             : truthyVal}
