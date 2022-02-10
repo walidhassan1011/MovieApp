@@ -6,14 +6,19 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import style from "./modules.Sidermenu.css";
 import { SiderbarData } from "./SiderData";
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
-
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
+import { useUserAuth } from "../context/UserAuthContext";
 function Sidermenu(props) {
   const [sider, setsider] = useState(false);
   const siderChange = () => {
     setsider(!sider);
   };
-
+  const { Name } = useUserAuth();
   return (
     <>
       <section className={style.body}>
@@ -23,10 +28,14 @@ function Sidermenu(props) {
               <button onClick={siderChange}>
                 <GiIcons.GiHamburgerMenu />
               </button>
+              <span>Hi,{Name}</span>
             </div>
             {SiderbarData.map((data, index) => {
               return (
-                <li onClick={()=>{<Redirect to = {data.path}></Redirect>}}
+                <li
+                  onClick={() => {
+                    <Redirect to={data.path}></Redirect>;
+                  }}
                   key={index}
                   className={sider ? "side-item" : "side-item-inactive"}
                 >

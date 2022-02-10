@@ -1,11 +1,10 @@
 import React from "react";
 import * as FaBIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
-import * as CgIcons from "react-icons/cg";
+
 import * as FcIcons from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import axios from "axios";
+
 import { useUserAuth } from "../context/UserAuthContext";
 import { Alert, Form } from "react-bootstrap";
 
@@ -18,7 +17,8 @@ function Sign() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const { logIn, googleSignIn, facebookSignIn } = useUserAuth();
+  const { logIn, googleSignIn, facebookSignIn,Name} = useUserAuth();
+  console.log(Name);
   const navigate = useHistory();
   const handleSubmit = async (e) => {
     e.preventDefault();

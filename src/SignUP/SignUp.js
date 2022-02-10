@@ -17,7 +17,7 @@ function SignUp() {
   const [confirmPassword, setconfirmPassword] = useState("");
   const [error, stError] = useState("");
   const navigate = useHistory();
-  const { signUp } = useUserAuth();
+  const { signUp, setName } = useUserAuth();
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (confirmPassword === password) {
@@ -49,7 +49,12 @@ function SignUp() {
               <div className="sec-container">
                 <div className="their-container">
                   <div className="name">
-                    <input placeholder="first name"></input>
+                    <input
+                      placeholder="first name"
+                      onChange={(e) => {
+                        setName(e.target.value);
+                      }}
+                    ></input>
 
                     <input placeholder="last name"></input>
                   </div>

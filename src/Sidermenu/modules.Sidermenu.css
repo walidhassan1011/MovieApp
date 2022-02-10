@@ -115,6 +115,9 @@ ul {
   justify-content: flex-start;
   align-items: center;
 }
+.side-btn span {
+  color: aliceblue;
+}
 
 .side-btn button {
   background-color: transparent;

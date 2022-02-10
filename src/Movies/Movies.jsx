@@ -3,14 +3,13 @@ import { Component, Fragment } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import * as AiIcons from "react-icons/ai";
 import * as BiIcons from "react-icons/bi";
-import * as FiIcons from "react-icons/fi";
+
 import * as BsIcons from "react-icons/bs";
-import * as GrIcons from "react-icons/gr";
+
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
 import "font-awesome/css/font-awesome.css";
-import Details from "../Details/Details";
-import { Redirect } from "react-router-dom";
+
 import style from "../Movies/Movies.module.css";
 import Sidermenu from "../Sidermenu/Sidermenu";
 // import { withRouter } from 'react-router'
@@ -97,7 +96,10 @@ class Movies extends Component {
           </div>
           <div className={style.playIcon + " shadow-lg vh-100"}>
             <p className="text-center text-white display-5">Details</p>
-            <Link to={"details/movie/" + featuringItem} className="">
+            <Link
+              to={"details/" + this.state.type + "/" + featuringItem}
+              className=""
+            >
               <AiIcons.AiFillPlayCircle />
             </Link>
           </div>
@@ -215,12 +217,16 @@ class Movies extends Component {
                       alt="not available"
                     />
                   </div>
-                  <h1 className={style.title + " " + style.itemTitle}>
+                  <h1
+                    className={
+                      style.title + " col-sm-12 col-lg-12 " + style.itemTitle
+                    }
+                  >
                     {truthyVal.length > 25
                       ? truthyVal.split(" ").slice(0, 5).join(" ") + "-.."
                       : truthyVal}
                   </h1>
-                  <div className="">
+                  <div className="row">
                     <h1 className={" fw-light text-muted " + style.title}>
                       Release Date: {value.release_date}
                       {value.first_air_date}
